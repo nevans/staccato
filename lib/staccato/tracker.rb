@@ -29,9 +29,7 @@ module Staccato
 
     # The tracker id for GA
     # @return [String, nil]
-    def id
-      @id
-    end
+    attr_reader :id
 
     # The unique client id
     # @return [String]
