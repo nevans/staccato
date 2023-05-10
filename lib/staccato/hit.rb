@@ -116,7 +116,7 @@ module Staccato
     # @param index [Integer]
     # @param value
     def add_custom_dimension(index, value)
-      self.custom_dimensions["cd#{index}"] = value
+      custom_dimensions["cd#{index}"] = value
     end
 
     # Custom dimensions for this hit
@@ -129,7 +129,7 @@ module Staccato
     # @param index [Integer]
     # @param value
     def add_custom_metric(index, value)
-      self.custom_metrics["cm#{index}"] = value
+      custom_metrics["cm#{index}"] = value
     end
 
     # Custom metrics for this hit
@@ -144,9 +144,9 @@ module Staccato
     # @param options [Hash or Object] for the measurement
     def add_measurement(key, options = {})
       if options.is_a?(Hash)
-        self.measurements << Measurement.lookup(key).new(options)
+        measurements << Measurement.lookup(key).new(options)
       else
-        self.measurements << options
+        measurements << options
       end
     end
 

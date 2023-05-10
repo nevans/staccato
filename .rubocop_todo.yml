@@ -149,14 +149,6 @@ Style/HashSyntax:
     - 'spec/lib/staccato/event_spec.rb'
     - 'spec/lib/staccato/pageview_spec.rb'
 
-# Offense count: 7
-# This cop supports safe autocorrection (--autocorrect).
-Style/RedundantSelf:
-  Exclude:
-    - 'lib/staccato/hit.rb'
-    - 'lib/staccato/measurable.rb'
-    - 'lib/staccato/timing.rb'
-
 # Offense count: 45
 # This cop supports safe autocorrection (--autocorrect).
 # Configuration parameters: EnforcedStyle, ConsistentQuotesInMultiline.

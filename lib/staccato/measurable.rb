@@ -51,7 +51,7 @@ module Staccato
     # @param value
     def add_custom_dimension(dimension_index, value)
       return unless custom_fields_allowed?
-      self.custom_dimensions["#{prefix}cd#{dimension_index}"] = value
+      custom_dimensions["#{prefix}cd#{dimension_index}"] = value
     end
 
     # Custom dimensions for this measurable
@@ -65,7 +65,7 @@ module Staccato
     # @param value
     def add_custom_metric(metric_index, value)
       return unless custom_fields_allowed?
-      self.custom_metrics["#{prefix}cm#{metric_index}"] = value
+      custom_metrics["#{prefix}cm#{metric_index}"] = value
     end
 
     # Custom metrics for this measurable
