@@ -13,17 +13,15 @@ module Staccato
   # Classes for measurements to be add to Hits
   module Measurement
     # List of measurement classes by lookup key
-    TYPES = Hash[
-      [
-        Checkout,
-        CheckoutOption,
-        ImpressionList,
-        Product,
-        ProductImpression,
-        Promotion,
-        Transaction
-      ].map { |k| [k.lookup_key, k] }
-    ].freeze
+    TYPES = [
+      Checkout,
+      CheckoutOption,
+      ImpressionList,
+      Product,
+      ProductImpression,
+      Promotion,
+      Transaction
+    ].map { |k| [k.lookup_key, k] }.to_h.freeze
 
     # Lookup a measurement class by its key
     # @param key [Symbol]

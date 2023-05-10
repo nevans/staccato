@@ -78,14 +78,12 @@ module Staccato
 
     # @private
     def measurable_params
-      Hash[
-        fields.map { |field, key|
-          next if key.nil?
-          key = (prefix + key.to_s)
+      fields.map { |field, key|
+        next if key.nil?
+        key = (prefix + key.to_s)
 
-          [key, options[field]] unless options[field].nil?
-        }.compact
-      ]
+        [key, options[field]] unless options[field].nil?
+      }.compact.to_h
     end
   end
 end

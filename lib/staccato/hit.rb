@@ -195,20 +195,16 @@ module Staccato
 
     # @private
     def global_options_params
-      Hash[
-        options.map { |k, v|
-          [GLOBAL_OPTIONS[k], v] if global_option?(k)
-        }.compact
-      ]
+      options.map { |k, v|
+        [GLOBAL_OPTIONS[k], v] if global_option?(k)
+      }.compact.to_h
     end
 
     # @private
     def tracker_default_params
-      Hash[
-        tracker.hit_defaults.map { |k, v|
-          [GLOBAL_OPTIONS[k], v] if global_option?(k)
-        }.compact
-      ]
+      tracker.hit_defaults.map { |k, v|
+        [GLOBAL_OPTIONS[k], v] if global_option?(k)
+      }.compact.to_h
     end
 
     # @private
@@ -218,11 +214,9 @@ module Staccato
 
     # @private
     def hit_params
-      Hash[
-        fields.map { |field, key|
-          [key, options[field]] unless options[field].nil?
-        }.compact
-      ]
+      fields.map { |field, key|
+        [key, options[field]] unless options[field].nil?
+      }.compact.to_h
     end
 
     # @private
