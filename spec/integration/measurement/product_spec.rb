@@ -30,7 +30,7 @@ describe Staccato::Measurement::Product do
 
   let(:product) { Staccato::Measurement::Product.new(product_options) }
 
-  before(:each) do
+  before do
     allow(SecureRandom).to receive(:uuid).and_return('555')
     allow(Net::HTTP).to receive(:post_form).and_return(response)
   end
@@ -69,7 +69,7 @@ describe Staccato::Measurement::Product do
 
   context "with some custom dimensions" do
 
-    before(:each) do
+    before do
       product.add_custom_dimension(1, 'Apple')
       product.add_custom_dimension(5, 'Samsung')
       event.add_measurement(:product, product)

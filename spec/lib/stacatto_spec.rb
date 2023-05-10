@@ -28,7 +28,7 @@ describe Staccato do
         })
       }
 
-      before(:each) do
+      before do
         allow(SecureRandom).to receive(:uuid).and_return("a-uuid")
       end
 

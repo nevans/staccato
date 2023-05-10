@@ -5,13 +5,13 @@ describe Staccato::NoopTracker do
   let(:tracker) {Staccato.tracker(nil)}
   let(:response) {double.tap {|o| o.stub(:body => '', :status => 201)}}
 
-  before(:each) do
+  before do
     allow(SecureRandom).to receive(:uuid).and_return('555')
     allow(Net::HTTP).to receive(:post_form).and_return(response)
   end
 
   describe "#pageview" do
-    before(:each) do
+    before do
       tracker.pageview(path: '/foobar', title: 'FooBar', hostname: 'mysite.com')
     end
 
@@ -35,7 +35,7 @@ describe Staccato::NoopTracker do
   end
 
   describe "#event" do
-    before(:each) do
+    before do
       tracker.event({
         category: 'video',
         action: 'play',
@@ -50,7 +50,7 @@ describe Staccato::NoopTracker do
   end
 
   describe "#social" do
-    before(:each) do
+    before do
       tracker.social({
         action: 'like',
         network: 'facebook',
@@ -64,7 +64,7 @@ describe Staccato::NoopTracker do
   end
 
   describe "#exception" do
-    before(:each) do
+    before do
       tracker.exception({
         description: 'RuntimeException',
         fatal: true
@@ -77,7 +77,7 @@ describe Staccato::NoopTracker do
   end
 
   describe "#timing" do
-    before(:each) do
+    before do
       tracker.timing({
         category: 'view',
         variable: 'runtime',
@@ -94,7 +94,7 @@ describe Staccato::NoopTracker do
   describe "#timing with block" do
     let(:codez) {double.tap {|o| o.stub(:test => true)}}
 
-    before(:each) do
+    before do
       start_at = Time.now
       end_at = start_at + 1 # 1 second
 
@@ -115,7 +115,7 @@ describe Staccato::NoopTracker do
   end
 
   describe "#track" do
-    before(:each) do
+    before do
       tracker.track
     end
 

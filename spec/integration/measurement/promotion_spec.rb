@@ -5,7 +5,7 @@ describe Staccato::Measurement::Promotion do
   let(:tracker) {Staccato.tracker('UA-XXXX-Y')}
   let(:response) {double.tap {|o| o.stub(body: '', status: 201)}}
 
-  before(:each) do
+  before do
     allow(SecureRandom).to receive(:uuid).and_return('555')
     allow(Net::HTTP).to receive(:post_form).and_return(response)
   end
@@ -26,7 +26,7 @@ describe Staccato::Measurement::Promotion do
       position: 'banner_1'
     }}
 
-    before(:each) do
+    before do
       pageview.add_measurement(:promotion, measurement_options)
 
       pageview.track!

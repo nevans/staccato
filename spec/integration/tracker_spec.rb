@@ -8,13 +8,13 @@ describe Staccato::Tracker do
   let(:tracker) {Staccato.tracker('UA-XXXX-Y')}
   let(:response) {double.tap {|o| o.stub(body: '', status: 201)}}
 
-  before(:each) do
+  before do
     allow(SecureRandom).to receive(:uuid).and_return('555')
     allow(Net::HTTP).to receive(:post_form).and_return(response)
   end
 
   describe "#pageview" do
-    before(:each) do
+    before do
       expect(tracker.pageview(path: '/foobar', title: 'FooBar', hostname: 'mysite.com')).to eq(response)
     end
 
@@ -32,7 +32,7 @@ describe Staccato::Tracker do
   end
 
   describe "#event" do
-    before(:each) do
+    before do
       tracker.event({
         category: 'video',
         action: 'play',
@@ -56,7 +56,7 @@ describe Staccato::Tracker do
   end
 
   describe "#social" do
-    before(:each) do
+    before do
       tracker.social({
         action: 'like',
         network: 'facebook',
@@ -78,7 +78,7 @@ describe Staccato::Tracker do
   end
 
   describe "#exception" do
-    before(:each) do
+    before do
       tracker.exception({
         description: 'RuntimeException',
         fatal: true,
@@ -100,7 +100,7 @@ describe Staccato::Tracker do
   end
 
   describe "#timing" do
-    before(:each) do
+    before do
       tracker.timing({
         category: 'view',
         variable: 'runtime',
@@ -126,7 +126,7 @@ describe Staccato::Tracker do
   describe "#timing with block" do
     let(:codez) {double.tap {|o| o.stub(:test => true)}}
 
-    before(:each) do
+    before do
       start_at = Time.now
       end_at = start_at + 1 # 1 second
 
@@ -159,7 +159,7 @@ describe Staccato::Tracker do
     describe "#transaction" do
       let(:transaction_id) {1293281}
 
-      before(:each) do
+      before do
         tracker.transaction({
           transaction_id: transaction_id,
           affiliation: 'western',
@@ -189,7 +189,7 @@ describe Staccato::Tracker do
     describe "#transaction_item" do
       let(:transaction_id) {1293281}
 
-      before(:each) do
+      before do
         tracker.transaction_item({
           transaction_id: transaction_id,
           name: 'Sofa',
@@ -220,7 +220,7 @@ describe Staccato::Tracker do
   end
 
   context "with defaults" do
-    before(:each) do
+    before do
       tracker.hit_defaults[:document_hostname] = 'mysite.com'
     end
 
@@ -248,7 +248,7 @@ describe Staccato::Tracker, "with multiple adapters" do
     c.add_adapter http_adapter
   end}
 
-  before(:each) do
+  before do
     allow(net_http_adapter).to receive(:post).and_return("Net::HTTP response")
     allow(http_adapter).to receive(:post).and_return("HTTP Response")
   end

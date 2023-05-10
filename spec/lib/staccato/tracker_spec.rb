@@ -7,7 +7,7 @@ describe Staccato::Tracker do
   context "#pageview" do
     let(:pageview) {Staccato::Pageview.new(tracker, {})}
 
-    before(:each) do
+    before do
       allow(pageview).to receive(:track!)
       allow(Staccato::Pageview).to receive(:new).and_return(pageview)
 
@@ -26,7 +26,7 @@ describe Staccato::Tracker do
   context "#event" do
     let(:event) {Staccato::Event.new(tracker, {})}
 
-    before(:each) do
+    before do
       allow(event).to receive(:track!)
       allow(Staccato::Event).to receive(:new).and_return(event)
 

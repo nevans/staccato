@@ -32,14 +32,14 @@ describe Staccato::Measurement::ProductImpression do
 
   let(:product_impression) { Staccato::Measurement::ProductImpression.new(product_impression_options) }
 
-  before(:each) do
+  before do
     allow(SecureRandom).to receive(:uuid).and_return('555')
     allow(Net::HTTP).to receive(:post_form).and_return(response)
   end
 
   context 'a pageview with an List Impression' do
 
-    before(:each) do
+    before do
       pageview.add_measurement(:impression_list, impression_list_options)
       pageview.add_measurement(:product_impression, product_impression_options)
 
@@ -69,7 +69,7 @@ describe Staccato::Measurement::ProductImpression do
 
   context 'with some custom dimensions' do
 
-    before(:each) do
+    before do
       pageview.add_measurement(:impression_list, impression_list_options)
       product_impression.add_custom_dimension(1, 'Apple')
       product_impression.add_custom_dimension(5, 'Samsung')
@@ -103,7 +103,7 @@ describe Staccato::Measurement::ProductImpression do
 
   context 'with some custom metrics' do
 
-    before(:each) do
+    before do
       pageview.add_measurement(:impression_list, impression_list_options)
       product_impression.add_custom_metric(1, 43.20)
       product_impression.add_custom_metric(3, 8)

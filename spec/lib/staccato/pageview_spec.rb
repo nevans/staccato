@@ -119,7 +119,7 @@ describe Staccato::Pageview do
       Staccato::Pageview.new(tracker)
     end
 
-    before(:each) do
+    before do
       pageview.add_custom_dimension(19, 'Apple')
       pageview.add_custom_dimension(8, 'Samsung')
     end
@@ -141,7 +141,7 @@ describe Staccato::Pageview do
       Staccato::Pageview.new(tracker)
     end
 
-    before(:each) do
+    before do
       pageview.add_custom_metric(12, 42)
       pageview.add_custom_metric(1, 11)
     end
