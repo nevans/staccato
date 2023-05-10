@@ -85,12 +85,6 @@ Style/ConditionalAssignment:
     - 'lib/staccato/hit.rb'
 
 # Offense count: 1
-# This cop supports safe autocorrection (--autocorrect).
-Style/EmptyCaseCondition:
-  Exclude:
-    - 'lib/staccato/hit.rb'
-
-# Offense count: 1
 # This cop supports unsafe autocorrection (--autocorrect-all).
 Style/GlobalStdStream:
   Exclude:

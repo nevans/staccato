@@ -160,10 +160,9 @@ module Staccato
     #   based on options for session_start/_end
     # @return ['start', 'end']
     def session_control
-      case
-      when options[:session_start], options[:start_session]
+      if options[:session_start] || options[:start_session]
         'start'
-      when options[:session_end], options[:end_session], options[:stop_session]
+      elsif options[:session_end] || options[:end_session] || options[:stop_session]
         'end'
       end
     end
