@@ -28,7 +28,7 @@ module Staccato
     # tracks the timing hit type
     # @param block [#call] block is executed and time recorded
     def track!(&block)
-      if block_given?
+      if block
         start_at = Time.now
         block.call
         end_at = Time.now

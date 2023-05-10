@@ -250,7 +250,7 @@ module Staccato
 
     # (see Tracker#timing)
     def timing(options = {}, &block)
-      yield if block_given?
+      yield if block
     end
 
     # (see Tracker#transaction)
