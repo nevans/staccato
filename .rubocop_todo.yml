@@ -149,20 +149,6 @@ Style/HashSyntax:
     - 'spec/lib/staccato/event_spec.rb'
     - 'spec/lib/staccato/pageview_spec.rb'
 
-# Offense count: 10
-# This cop supports safe autocorrection (--autocorrect).
-# Configuration parameters: AllowedMethods, AllowedPatterns.
-Style/MethodCallWithoutArgsParentheses:
-  Exclude:
-    - 'spec/integration/measurement/checkout_option_spec.rb'
-    - 'spec/integration/measurement/checkout_spec.rb'
-    - 'spec/integration/measurement/product_impression_spec.rb'
-    - 'spec/integration/measurement/product_spec.rb'
-    - 'spec/integration/measurement/promotion_spec.rb'
-    - 'spec/integration/measurement/transaction_spec.rb'
-    - 'spec/integration/noop_tracker_spec.rb'
-    - 'spec/integration/tracker_spec.rb'
-
 # Offense count: 7
 # This cop supports safe autocorrection (--autocorrect).
 Style/RedundantSelf:

@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Staccato::Measurement::ProductImpression do
   let(:uri) {Staccato.ga_collection_uri}
   let(:tracker) {Staccato.tracker('UA-XXXX-Y')}
-  let(:response) {double().tap {|o| o.stub(body: '', status: 201)}}
+  let(:response) {double.tap {|o| o.stub(body: '', status: 201)}}
 
   let(:pageview) {
     tracker.build_pageview({

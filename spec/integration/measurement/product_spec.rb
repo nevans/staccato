@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Staccato::Measurement::Product do
   let(:uri) {Staccato.ga_collection_uri}
   let(:tracker) {Staccato.tracker('UA-XXXX-Y')}
-  let(:response) {double().tap {|o| o.stub(body: '', status: 201)}}
+  let(:response) {double.tap {|o| o.stub(body: '', status: 201)}}
 
   let(:event) {
     tracker.build_event({

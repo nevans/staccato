@@ -6,7 +6,7 @@ require 'staccato/adapter/net_http'
 describe Staccato::Tracker do
   let(:uri) {Staccato.ga_collection_uri}
   let(:tracker) {Staccato.tracker('UA-XXXX-Y')}
-  let(:response) {double().tap {|o| o.stub(body: '', status: 201)}}
+  let(:response) {double.tap {|o| o.stub(body: '', status: 201)}}
 
   before(:each) do
     allow(SecureRandom).to receive(:uuid).and_return('555')
@@ -124,7 +124,7 @@ describe Staccato::Tracker do
   end
 
   describe "#timing with block" do
-    let(:codez) {double().tap {|o| o.stub(:test => true)}}
+    let(:codez) {double.tap {|o| o.stub(:test => true)}}
 
     before(:each) do
       start_at = Time.now
