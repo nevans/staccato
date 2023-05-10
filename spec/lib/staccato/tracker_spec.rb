@@ -4,7 +4,7 @@ describe Staccato::Tracker do
 
   let(:tracker) {Staccato.tracker('UA-XXXX-Y')}
 
-  context "#pageview" do
+  describe "#pageview" do
     let(:pageview) {Staccato::Pageview.new(tracker, {})}
 
     before do
@@ -23,7 +23,7 @@ describe Staccato::Tracker do
     end
   end
 
-  context "#event" do
+  describe "#event" do
     let(:event) {Staccato::Event.new(tracker, {})}
 
     before do

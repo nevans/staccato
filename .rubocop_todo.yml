@@ -19,12 +19,6 @@ Performance/InefficientHashSearch:
   Exclude:
     - 'lib/staccato/hit.rb'
 
-# Offense count: 2
-# This cop supports safe autocorrection (--autocorrect).
-RSpec/ContextMethod:
-  Exclude:
-    - 'spec/lib/staccato/tracker_spec.rb'
-
 # Offense count: 10
 # Configuration parameters: Prefixes, AllowedPatterns.
 # Prefixes: when, with, without
