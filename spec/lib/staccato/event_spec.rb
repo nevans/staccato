@@ -4,7 +4,7 @@ describe Staccato::Event do
 
   let(:tracker) {Staccato.tracker('UA-XXXX-Y', '555')}
 
-  context "with all options" do
+  context 'with all options' do
     let(:event) do
       Staccato::Event.new(tracker, {
         category: 'video',
@@ -44,7 +44,7 @@ describe Staccato::Event do
     end
   end
 
-  context "with extra options" do
+  context 'with extra options' do
     let(:event) do
       Staccato::Event.new(tracker, {
         category: 'video',
@@ -70,7 +70,7 @@ describe Staccato::Event do
     end
   end
 
-  context "with no options" do
+  context 'with no options' do
     let(:event) do
       Staccato::Event.new(tracker, {})
     end

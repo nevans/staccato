@@ -13,7 +13,7 @@ describe Staccato::Tracker do
     allow(Net::HTTP).to receive(:post_form).and_return(response)
   end
 
-  describe "#pageview" do
+  describe '#pageview' do
     before do
       expect(tracker.pageview(path: '/foobar', title: 'FooBar', hostname: 'mysite.com')).to eq(response)
     end
@@ -31,7 +31,7 @@ describe Staccato::Tracker do
     end
   end
 
-  describe "#event" do
+  describe '#event' do
     before do
       tracker.event({
         category: 'video',
@@ -55,7 +55,7 @@ describe Staccato::Tracker do
     end
   end
 
-  describe "#social" do
+  describe '#social' do
     before do
       tracker.social({
         action: 'like',
@@ -77,7 +77,7 @@ describe Staccato::Tracker do
     end
   end
 
-  describe "#exception" do
+  describe '#exception' do
     before do
       tracker.exception({
         description: 'RuntimeException',
@@ -99,7 +99,7 @@ describe Staccato::Tracker do
     end
   end
 
-  describe "#timing" do
+  describe '#timing' do
     before do
       tracker.timing({
         category: 'view',
@@ -123,7 +123,7 @@ describe Staccato::Tracker do
     end
   end
 
-  describe "#timing with block" do
+  describe '#timing with block' do
     let(:codez) {double.tap {|o| o.stub(test: true)}}
 
     before do
@@ -155,8 +155,8 @@ describe Staccato::Tracker do
     end
   end
 
-  describe "Transactions" do
-    describe "#transaction" do
+  describe 'Transactions' do
+    describe '#transaction' do
       let(:transaction_id) {1293281}
 
       before do
@@ -186,7 +186,7 @@ describe Staccato::Tracker do
       end
     end
 
-    describe "#transaction_item" do
+    describe '#transaction_item' do
       let(:transaction_id) {1293281}
 
       before do
@@ -219,7 +219,7 @@ describe Staccato::Tracker do
     end
   end
 
-  context "with defaults" do
+  context 'with defaults' do
     before do
       tracker.hit_defaults[:document_hostname] = 'mysite.com'
     end
@@ -239,7 +239,7 @@ describe Staccato::Tracker do
   end
 end
 
-describe Staccato::Tracker, "with multiple adapters" do
+describe Staccato::Tracker, 'with multiple adapters' do
   let(:uri) {Staccato.ga_collection_uri}
   let(:net_http_adapter) {Staccato::Adapter::Net::HTTP.new(uri)}
   let(:http_adapter) {Staccato::Adapter::HTTP.new(uri)}
@@ -249,11 +249,11 @@ describe Staccato::Tracker, "with multiple adapters" do
   end}
 
   before do
-    allow(net_http_adapter).to receive(:post).and_return("Net::HTTP response")
-    allow(http_adapter).to receive(:post).and_return("HTTP Response")
+    allow(net_http_adapter).to receive(:post).and_return('Net::HTTP response')
+    allow(http_adapter).to receive(:post).and_return('HTTP Response')
   end
 
   it 'returns an array of responses in order of adapter' do
-    expect(tracker.pageview(path: '/')).to eq(["Net::HTTP response", "HTTP Response"])
+    expect(tracker.pageview(path: '/')).to eq(['Net::HTTP response', 'HTTP Response'])
   end
 end

@@ -11,7 +11,7 @@ describe Staccato do
     end
 
     it 'uses a uuid for the client_id' do
-      allow(SecureRandom).to receive(:uuid).and_return("a-uuid")
+      allow(SecureRandom).to receive(:uuid).and_return('a-uuid')
 
       expect(tracker.client_id).to eq('a-uuid')
     end
@@ -29,11 +29,11 @@ describe Staccato do
       }
 
       before do
-        allow(SecureRandom).to receive(:uuid).and_return("a-uuid")
+        allow(SecureRandom).to receive(:uuid).and_return('a-uuid')
       end
 
       it 'turns a hit into a URL string' do
-        url = "http://www.google-analytics.com/collect?v=1&tid=UA-XXXX-Y&cid=a-uuid&t=event&ec=email&ea=open&el=welcome&ev=1"
+        url = 'http://www.google-analytics.com/collect?v=1&tid=UA-XXXX-Y&cid=a-uuid&t=event&ec=email&ea=open&el=welcome&ev=1'
 
         expect(Staccato.as_url(event)).to eq(url)
       end

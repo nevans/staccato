@@ -67,7 +67,7 @@ describe Staccato::Measurement::Product do
 
   end
 
-  context "with some custom dimensions" do
+  context 'with some custom dimensions' do
 
     before do
       product.add_custom_dimension(1, 'Apple')
@@ -102,7 +102,7 @@ describe Staccato::Measurement::Product do
     end
   end
 
-  context "with some custom metrics" do
+  context 'with some custom metrics' do
 
     before do
       product.add_custom_metric(1, 78)

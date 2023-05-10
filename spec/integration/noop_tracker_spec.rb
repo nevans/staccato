@@ -10,7 +10,7 @@ describe Staccato::NoopTracker do
     allow(Net::HTTP).to receive(:post_form).and_return(response)
   end
 
-  describe "#pageview" do
+  describe '#pageview' do
     before do
       tracker.pageview(path: '/foobar', title: 'FooBar', hostname: 'mysite.com')
     end
@@ -34,7 +34,7 @@ describe Staccato::NoopTracker do
     end
   end
 
-  describe "#event" do
+  describe '#event' do
     before do
       tracker.event({
         category: 'video',
@@ -49,7 +49,7 @@ describe Staccato::NoopTracker do
     end
   end
 
-  describe "#social" do
+  describe '#social' do
     before do
       tracker.social({
         action: 'like',
@@ -63,7 +63,7 @@ describe Staccato::NoopTracker do
     end
   end
 
-  describe "#exception" do
+  describe '#exception' do
     before do
       tracker.exception({
         description: 'RuntimeException',
@@ -76,7 +76,7 @@ describe Staccato::NoopTracker do
     end
   end
 
-  describe "#timing" do
+  describe '#timing' do
     before do
       tracker.timing({
         category: 'view',
@@ -91,7 +91,7 @@ describe Staccato::NoopTracker do
     end
   end
 
-  describe "#timing with block" do
+  describe '#timing with block' do
     let(:codez) {double.tap {|o| o.stub(test: true)}}
 
     before do
@@ -114,7 +114,7 @@ describe Staccato::NoopTracker do
     end
   end
 
-  describe "#track" do
+  describe '#track' do
     before do
       tracker.track
     end

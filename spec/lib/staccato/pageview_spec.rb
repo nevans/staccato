@@ -4,7 +4,7 @@ describe Staccato::Pageview do
 
   let(:tracker) {Staccato.tracker('UA-XXXX-Y', '555')}
 
-  context "with all options" do
+  context 'with all options' do
     let(:pageview) do
       Staccato::Pageview.new(tracker, {
         hostname: 'mysite.com',
@@ -38,7 +38,7 @@ describe Staccato::Pageview do
     end
   end
 
-  context "with extra options" do
+  context 'with extra options' do
     let(:pageview) do
       Staccato::Pageview.new(tracker, {
         hostname: 'mysite.com',
@@ -61,7 +61,7 @@ describe Staccato::Pageview do
     end
   end
 
-  context "with no options" do
+  context 'with no options' do
     let(:pageview) do
       Staccato::Pageview.new(tracker, {})
     end
@@ -76,7 +76,7 @@ describe Staccato::Pageview do
     end
   end
 
-  context "with experiment_* options" do
+  context 'with experiment_* options' do
     let(:pageview) do
       Staccato::Pageview.new(tracker, {
         experiment_id: 'ac67afa889',
@@ -96,7 +96,7 @@ describe Staccato::Pageview do
     end
   end
 
-  context "with session control" do
+  context 'with session control' do
     let(:pageview) do
       Staccato::Pageview.new(tracker, {
         session_start: true
@@ -114,7 +114,7 @@ describe Staccato::Pageview do
     end
   end
 
-  context "with some custom dimensions" do
+  context 'with some custom dimensions' do
     let(:pageview) do
       Staccato::Pageview.new(tracker)
     end
@@ -136,7 +136,7 @@ describe Staccato::Pageview do
     end
   end
 
-  context "with some custom metrics" do
+  context 'with some custom metrics' do
     let(:pageview) do
       Staccato::Pageview.new(tracker)
     end

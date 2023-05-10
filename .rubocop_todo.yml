@@ -112,22 +112,6 @@ Style/HashConversion:
     - 'lib/staccato/measurable.rb'
     - 'lib/staccato/measurement.rb'
 
-# Offense count: 45
-# This cop supports safe autocorrection (--autocorrect).
-# Configuration parameters: EnforcedStyle, ConsistentQuotesInMultiline.
-# SupportedStyles: single_quotes, double_quotes
-Style/StringLiterals:
-  Exclude:
-    - 'lib/staccato.rb'
-    - 'lib/staccato/version.rb'
-    - 'spec/integration/measurement/product_spec.rb'
-    - 'spec/integration/noop_tracker_spec.rb'
-    - 'spec/integration/tracker_spec.rb'
-    - 'spec/lib/stacatto_spec.rb'
-    - 'spec/lib/staccato/event_spec.rb'
-    - 'spec/lib/staccato/pageview_spec.rb'
-    - 'spec/lib/staccato/tracker_spec.rb'
-
 # Offense count: 1
 # This cop supports safe autocorrection (--autocorrect).
 # Configuration parameters: ExactNameMatch, AllowPredicates, AllowDSLWriters, IgnoreClassMethods, AllowedMethods.

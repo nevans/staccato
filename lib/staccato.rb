@@ -3,7 +3,7 @@ require 'forwardable'
 require 'securerandom'
 require 'uri'
 
-require "staccato/version"
+require 'staccato/version'
 
 # The `Staccato` module namespace
 #
