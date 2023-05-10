@@ -43,7 +43,7 @@ module Staccato
         .merge!(measurable_params)
         .merge!(custom_dimensions)
         .merge!(custom_metrics)
-        .reject {|_,v| v.nil?}
+        .reject {|_, v| v.nil?}
     end
 
     # Set a custom dimension value at an index
@@ -79,9 +79,9 @@ module Staccato
     # @private
     def measurable_params
       Hash[
-        fields.map { |field,key|
+        fields.map { |field, key|
           next if key.nil?
-          key = (prefix+key.to_s)
+          key = (prefix + key.to_s)
 
           [key, options[field]] unless options[field].nil?
         }.compact

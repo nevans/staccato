@@ -11,7 +11,7 @@ module BooleanHelpers
 
   # Method to convert a single field from bool to int
   # @param hash [#[]=] the collector object
-  def convert_boolean((k,v), hash)
+  def convert_boolean((k, v), hash)
     hash[k] = boolean_field?(k) ? integer_for(v) : v
   end
 

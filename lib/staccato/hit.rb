@@ -109,7 +109,7 @@ module Staccato
         .merge!(custom_dimensions)
         .merge!(custom_metrics)
         .merge!(measurement_params)
-        .reject {|_,v| v.nil?}
+        .reject {|_, v| v.nil?}
     end
 
     # Set a custom dimension value at an index
@@ -174,6 +174,7 @@ module Staccato
     end
 
     private
+
     # @private
     def boolean_fields
       BOOLEAN_FIELDS
@@ -195,7 +196,7 @@ module Staccato
     # @private
     def global_options_params
       Hash[
-        options.map { |k,v|
+        options.map { |k, v|
           [GLOBAL_OPTIONS[k], v] if global_option?(k)
         }.compact
       ]
@@ -204,7 +205,7 @@ module Staccato
     # @private
     def tracker_default_params
       Hash[
-        tracker.hit_defaults.map { |k,v|
+        tracker.hit_defaults.map { |k, v|
           [GLOBAL_OPTIONS[k], v] if global_option?(k)
         }.compact
       ]
@@ -218,7 +219,7 @@ module Staccato
     # @private
     def hit_params
       Hash[
-        fields.map { |field,key|
+        fields.map { |field, key|
           [key, options[field]] unless options[field].nil?
         }.compact
       ]

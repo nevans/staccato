@@ -11,7 +11,7 @@ module Staccato
       # product prefix
       # @return [String]
       def prefix
-        'pr'+index.to_s
+        'pr' + index.to_s
       end
 
       # product allow custom dimensions and metrics

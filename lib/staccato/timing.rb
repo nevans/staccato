@@ -33,7 +33,7 @@ module Staccato
         block.call
         end_at = Time.now
 
-        self.options.time = (end_at - start_at).to_i*1000
+        self.options.time = (end_at - start_at).to_i * 1000
       end
 
       super

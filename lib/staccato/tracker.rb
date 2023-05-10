@@ -163,7 +163,7 @@ module Staccato
 
     # post the hit to GA collection endpoint
     # @return [Net::HTTPOK] the GA api always returns 200 OK
-    def track(params={})
+    def track(params = {})
       post(params)
     end
 
@@ -234,23 +234,31 @@ module Staccato
 
     # (see Tracker#build_pageview)
     def build_pageview(options = {}); end
+
     # (see Tracker#pageview)
     def pageview(options = {}); end
+
     # (see Tracker#build_event)
     def build_event(options = {}); end
+
     # (see Tracker#event)
     def event(options = {}); end
+
     # (see Tracker#social)
     def social(options = {}); end
+
     # (see Tracker#exception)
     def exception(options = {}); end
+
     # (see Tracker#timing)
     def timing(options = {}, &block)
       yield if block_given?
     end
+
     # (see Tracker#transaction)
     def transaction(options = {})
     end
+
     # (see Tracker#transaction_item)
     def transaction_item(options = {})
     end

@@ -11,7 +11,7 @@ module Staccato
       # impression list prefix
       # @return [String]
       def prefix
-        'il'+index.to_s
+        'il' + index.to_s
       end
 
       # Impression list measurement options fields

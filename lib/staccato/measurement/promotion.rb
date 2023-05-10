@@ -11,7 +11,7 @@ module Staccato
       # promotion prefix
       # @return [String]
       def prefix
-        'promo'+index.to_s
+        'promo' + index.to_s
       end
 
       # Promotion measurement options fields
