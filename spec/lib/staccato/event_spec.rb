@@ -7,10 +7,10 @@ describe Staccato::Event do
   context "with all options" do
     let(:event) do
       Staccato::Event.new(tracker, {
-        :category => 'video',
-        :action => 'play',
-        :label => 'cars',
-        :value => 12
+        category: 'video',
+        action: 'play',
+        label: 'cars',
+        value: 12
       })
     end
 
@@ -47,12 +47,12 @@ describe Staccato::Event do
   context "with extra options" do
     let(:event) do
       Staccato::Event.new(tracker, {
-        :category => 'video',
-        :action => 'play',
-        :label => 'cars',
-        :value => 12,
-        :hostname => 'mysite.com',
-        :path => '/foobar'
+        category: 'video',
+        action: 'play',
+        label: 'cars',
+        value: 12,
+        hostname: 'mysite.com',
+        path: '/foobar'
       })
     end
 

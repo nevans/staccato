@@ -6,7 +6,7 @@ module Staccato
       end
 
       def post(params)
-        ::HTTP.post(@uri, :form => params)
+        ::HTTP.post(@uri, form: params)
       end
     end
   end

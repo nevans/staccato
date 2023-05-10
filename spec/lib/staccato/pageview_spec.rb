@@ -7,9 +7,9 @@ describe Staccato::Pageview do
   context "with all options" do
     let(:pageview) do
       Staccato::Pageview.new(tracker, {
-        :hostname => 'mysite.com',
-        :path => '/foobar',
-        :title => 'FooBar'
+        hostname: 'mysite.com',
+        path: '/foobar',
+        title: 'FooBar'
       })
     end
 
@@ -41,10 +41,10 @@ describe Staccato::Pageview do
   context "with extra options" do
     let(:pageview) do
       Staccato::Pageview.new(tracker, {
-        :hostname => 'mysite.com',
-        :path => '/foobar',
-        :title => 'FooBar',
-        :action => 'play'
+        hostname: 'mysite.com',
+        path: '/foobar',
+        title: 'FooBar',
+        action: 'play'
       })
     end
 

@@ -124,7 +124,7 @@ describe Staccato::Tracker do
   end
 
   describe "#timing with block" do
-    let(:codez) {double.tap {|o| o.stub(:test => true)}}
+    let(:codez) {double.tap {|o| o.stub(test: true)}}
 
     before do
       start_at = Time.now
